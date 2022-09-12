@@ -1,3 +1,19 @@
+<p>Name: {{ person.name }}</p>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name" />
+<p>Valid: {{ nameInput.valid }}</p>
+<p>Age: {{ person.age }}</p>
+<input
+  type="number"
+  max="18"
+  min="10"
+  #ageInput="ngModel"
+  required
+  [(ngModel)]="person.age"
+/>
+<p>Valid: {{ ageInput.valid }}</p>
+
+<hr />
+
 <h1>Events</h1>
 <button [disabled]="btnDisabled">Send</button>
 <button (click)="toggleButton()">Toggle Button</button>
@@ -13,8 +29,8 @@
     quod doloremque, ea voluptatibus, officia accusantium odit est.
   </p>
 </div>
-<input type="text" [value]="person.name" (keyup)="changeName($event)" />
 <p>Name: {{ person.name }}</p>
+<input type="text" [value]="person.name" (keyup)="changeName($event)" />
 
 <hr />
 
