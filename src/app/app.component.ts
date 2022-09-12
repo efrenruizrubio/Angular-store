@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass'],
 })
 export class AppComponent {
+  title: string = 'angular-store';
   person = {
     name: 'Efrén',
     age: 22,

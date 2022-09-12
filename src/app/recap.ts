@@ -1,6 +1,7 @@
 const username: string = '1';
 
 const sum = (a: number, b: number) => {
+  console.log('test');
   return a + b;
 };
 
