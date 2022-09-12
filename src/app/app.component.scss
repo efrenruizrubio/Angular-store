@@ -48,6 +48,46 @@
   }
 }
 
+.main__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.main__container h1 {
+  margin-bottom: 2rem;
+}
+
+.form__container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 50%;
+}
+
+.label {
+  margin-bottom: 1rem;
+}
+
+.input {
+  padding: 0.5rem;
+  &.valid {
+    background-color: red;
+  }
+}
+
+.message--error__input {
+  margin-bottom: 1rem;
+  visibility: visible;
+  color: red;
+  &.valid {
+    visibility: hidden;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .products__grid {
     display: grid;

@@ -1,4 +1,4 @@
-<h1>Form</h1>
+<!-- <h1>Form</h1>
 <form (ngSubmit)="onRegister()" #myForm="ngForm">
   <div class="input-group">
     <label for="">Name</label>
@@ -61,9 +61,9 @@
 <p class="message--error" [class.invalid]="classInput.invalid">
   The field is required
 </p>
-<!-- <label [style.font-style]="inputName3.invalid ? 'italic' : 'normal'"
+ <label [style.font-style]="inputName3.invalid ? 'italic' : 'normal'"
   >Nombre</label
-> -->
+>
 <input type="text" required #inputName3="ngModel" [(ngModel)]="person.name" />
 <p [style.font-style]="inputName3.invalid ? 'italic' : 'normal'">
   Lorem, ipsum dolor.
@@ -176,3 +176,69 @@
 <p>3 + 3= {{ 3 + 3 }}</p>
 <h3>Hello, my name is: {{ person.name }} and I'm {{ person.age }} years old</h3>
 <img width="100%" src="{{ person.img }}" alt="imagen" />
+ -->
+
+<div class="main__container">
+  <h1>My Account</h1>
+  <form class="form__container" #loginForm="ngForm">
+    <label class="label" for="name">Name</label>
+    <input
+      type="text"
+      required
+      #registerName="ngModel"
+      name="name"
+      class="input"
+      [(ngModel)]="register.name"
+    />
+    <p
+      class="message--error__input"
+      [ngClass]="{ valid: registerName.valid, invalid: registerName.invalid }"
+    >
+      This field is required.
+    </p>
+    <label class="label" for="email">Email address</label>
+    <input
+      type="email"
+      required
+      #registerEmail="ngModel"
+      name="email"
+      class="input"
+      [(ngModel)]="register.email"
+    />
+    <p
+      class="message--error__input"
+      [ngClass]="{ valid: registerEmail.valid, invalid: registerEmail.invalid }"
+    >
+      This field is required.
+    </p>
+    <label class="label" for="password">Password</label>
+    <input
+      type="password"
+      required
+      #registerPassword="ngModel"
+      name="password"
+      class="input"
+      [(ngModel)]="register.password"
+    />
+    <p
+      class="message--error__input"
+      [ngClass]="{
+        valid: registerPassword.valid,
+        invalid: registerPassword.invalid
+      }"
+    >
+      This field is required.
+    </p>
+    <button
+      [ngStyle]="{
+        'margin-top': '1rem',
+        padding: '1rem',
+        'border-radius': '1.5rem'
+      }"
+      type="submit"
+      [disabled]="loginForm.invalid"
+    >
+      Submit
+    </button>
+  </form>
+</div>
