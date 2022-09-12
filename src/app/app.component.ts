@@ -13,4 +13,10 @@ export class AppComponent {
     img: 'https://th.bing.com/th/id/OIP.krXgDcts2hh2AT61oGCDrgHaE8?pid=ImgDet&rs=1',
   };
   btnDisabled = true;
+  toggleButton() {
+    this.btnDisabled = !this.btnDisabled;
+  }
+  incrementAge() {
+    this.person.age++;
+  }
 }
