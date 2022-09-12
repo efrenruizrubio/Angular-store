@@ -7,6 +7,7 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  width = 10;
   title: string = 'angular-store';
   person = {
     name: 'Efrén',
