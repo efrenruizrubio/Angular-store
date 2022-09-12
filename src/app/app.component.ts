@@ -16,6 +16,11 @@ export class AppComponent {
   };
   names: string[] = ['Efrén', 'Luis', 'Juan', 'Pedro'];
   newName: string = '';
+  box = {
+    width: 100,
+    height: 100,
+    background: 'red',
+  };
   products: Product[] = [
     {
       name: 'El mejor juguete',
@@ -50,6 +55,12 @@ export class AppComponent {
     },
   ];
 
+  register = {
+    name: '',
+    email: '',
+    password: '',
+  };
+
   btnDisabled = true;
 
   toggleButton() {
@@ -72,5 +83,8 @@ export class AppComponent {
   }
   deleteName(index: number) {
     this.names.splice(index, 1);
+  }
+  onRegister() {
+    console.log(this.register);
   }
 }

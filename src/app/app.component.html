@@ -1,15 +1,75 @@
+<h1>Form</h1>
+<form (ngSubmit)="onRegister()" #myForm="ngForm">
+  <div class="input-group">
+    <label for="">Name</label>
+    <input type="text" required [(ngModel)]="register.name" name="name" />
+    <p>Error messages.</p>
+  </div>
+  <div class="input-group">
+    <label for="">Email</label>
+    <input type="email" required [(ngModel)]="register.email" name="email" />
+    <p>Error messages.</p>
+  </div>
+  <div class="input-group">
+    <label for="">Password</label>
+    <input
+      type="password"
+      required
+      [(ngModel)]="register.password"
+      name="password"
+    />
+    <p>Error messages.</p>
+  </div>
+  <button [disabled]="myForm.invalid" type="submit">Register</button>
+  <button type="button">Action</button>
+</form>
+
+<hr />
+<h1>NgClass & NgStyle</h1>
+<input type="text" required #classInput2="ngModel" [(ngModel)]="person.name" />
+<hr class="line-error" [class.invalid]="classInput.invalid" />
+<p
+  class="message--error"
+  [ngClass]="{
+    valid: classInput2.valid,
+    invalid: classInput2.invalid
+  }"
+>
+  The field is required
+</p>
+
+<div class="styles">
+  <div>
+    <input type="number" required [(ngModel)]="box.width" />
+    <input type="number" required [(ngModel)]="box.height" />
+    <input type="color" required [(ngModel)]="box.background" />
+  </div>
+  <div
+    [ngStyle]="{
+      'width.px': box.width,
+      'height.px': box.height,
+      'background-color': box.background,
+      display: 'block'
+    }"
+  ></div>
+</div>
+
+<hr />
+
 <h1>Class and Styles</h1>
 <input type="text" required #classInput="ngModel" [(ngModel)]="person.name" />
 <p class="message--error" [class.invalid]="classInput.invalid">
   The field is required
 </p>
-<label [style.font-style]="inputName3.invalid ? 'italic' : 'normal'"
+<!-- <label [style.font-style]="inputName3.invalid ? 'italic' : 'normal'"
   >Nombre</label
->
+> -->
 <input type="text" required #inputName3="ngModel" [(ngModel)]="person.name" />
 <p [style.font-style]="inputName3.invalid ? 'italic' : 'normal'">
   Lorem, ipsum dolor.
 </p>
+
+<hr />
 
 <div class="styles">
   <div>
